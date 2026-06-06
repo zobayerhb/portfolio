@@ -23,13 +23,14 @@ const navLinks = [
   { label: "Home", href: "#home", icon: Home },
   { label: "Skills", href: "#skills", icon: Wrench },
   { label: "Projects", href: "#projects", icon: FolderOpen },
-  { label: "Contact", href: "#contact", icon: Mail },
+  { label: "Experience", href: "#experience", icon: Briefcase },
+
 ];
 
 const moreLinks = [
   { label: "About Me", href: "#about", icon: User },
-  { label: "Experience", href: "#experience", icon: Briefcase },
   { label: "Education", href: "#education", icon: GraduationCap },
+  { label: "Contact", href: "#contact", icon: Mail },
 ];
 
 export function Header() {
