@@ -7,16 +7,11 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiExpress,
-  SiPython,
   SiPostgresql,
   SiMongodb,
-  SiRedis,
-  SiSupabase,
   SiGithub,
-  SiDocker,
 } from "react-icons/si"
-import { FaAws } from "react-icons/fa"
-import { VscSymbolRuler, VscDebugStepOver } from "react-icons/vsc"
+import { VscSymbolRuler} from "react-icons/vsc"
 
 const skills = [
   { id: "react", name: "React", icon: SiReact, color: "#61DAFB" },
@@ -25,16 +20,10 @@ const skills = [
   { id: "next", name: "Next.js", icon: SiNextdotjs },
   { id: "node", name: "Node.js", icon: SiNodedotjs, color: "#339933" },
   { id: "express", name: "Express.js", icon: SiExpress, color: "#999999" },
-  { id: "py", name: "Python", icon: SiPython, color: "#3776AB" },
   { id: "rest", name: "REST APIs", icon: VscSymbolRuler, color: "#E8A87C" },
   { id: "pg", name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
   { id: "mongo", name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-  { id: "redis", name: "Redis", icon: SiRedis, color: "#FF4438" },
-  { id: "supa", name: "Supabase", icon: SiSupabase, color: "#3FCF8E" },
   { id: "git", name: "Git & GitHub", icon: SiGithub },
-  { id: "docker", name: "Docker", icon: SiDocker, color: "#2496ED" },
-  { id: "cicd", name: "CI/CD", icon: VscDebugStepOver, color: "#A074C4" },
-  { id: "aws", name: "AWS", icon: FaAws, color: "#FF9900" },
 ]
 
 export function SkillsSection() {
