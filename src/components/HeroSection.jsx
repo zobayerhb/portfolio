@@ -1,8 +1,17 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Download, Code2, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import image from "../assets/zobayer.jpg";
+import { useEffect, useState } from "react";
+
+const roles = [
+  "Frontend Developer",
+  "Full Stack Developer",
+  "Backend Developer",
+  "Problem Solver",
+  "React Developer",
+];
 
 const socialLinks = [
   { icon: Code2, href: "https://github.com/zobayerhb", label: "GitHub" },
@@ -27,6 +36,17 @@ const itemVariants = {
 };
 
 export function HeroSection() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+  // Note: UI
   return (
     <section
       id="home"
@@ -66,20 +86,25 @@ export function HeroSection() {
               </h1>
             </motion.div>
 
+
             <motion.p
               variants={itemVariants}
-              className="text-2xl sm:text-3xl font-semibold text-foreground/80"
+              className="text-2xl sm:text-3xl font-semibold text-foreground/80 flex gap-2"
             >
-              I am a{" "}
-              <span className="text-primary relative">
-                Full Stack Developer
+              <span>I am a</span>
+
+              <AnimatePresence mode="wait">
                 <motion.span
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary origin-left"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 1.2, duration: 0.6 }}
-                />
-              </span>
+                  key={roles[index]}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-primary"
+                >
+                  {roles[index]}
+                </motion.span>
+              </AnimatePresence>
             </motion.p>
 
             <motion.p
